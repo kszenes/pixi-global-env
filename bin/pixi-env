@@ -19,6 +19,7 @@ Usage:
   pixi-env deactivate                      Deactivate the active environment
   pixi-env run -n <name> -- <command>      Run a command in an environment
   pixi-env shell-init                      Print shell integration for bash/zsh
+  pixi-env help                            Show this help
 
 Pixi wrapper after shell-init:
   pixi env create -n <name> [pkg ...]
@@ -29,7 +30,7 @@ Pixi wrapper after shell-init:
   pixi env remove -n <name>
   pixi env path [-n <name>]
   pixi env run -n <name> -- <cmd>
-  pixi-env help                            Show this help
+
 
 Environment variables:
   PIXI_ENV_HOME                            Directory where environments are stored
