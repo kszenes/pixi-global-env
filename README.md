@@ -53,8 +53,7 @@ Pixi wrapper after shell-init:
 
 
 Environment variables:
-  PIXI_ENV_HOME                            Directory where environments are stored
-                                     (default: ~/.pixi-envs)
+  PIXI_ENV_HOME                            Directory where environments are stored (default: ~/.pixi-envs)
 
 Install shell integration by adding this to ~/.bashrc or ~/.zshrc:
   eval "$(pixi-env shell-init)"
