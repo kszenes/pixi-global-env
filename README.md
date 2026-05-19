@@ -26,18 +26,46 @@ Add that line to `~/.bashrc` or `~/.zshrc` to make it permanent.
 ## Usage
 
 ```sh
-pixi env create -n py311 python=3.11 numpy
-pixi env list
-pixi env activate py311
-python --version
-pixi env deactivate
+~ $ pixi-env --help
+pixi-env - pixi global environments
+
+Usage:
+  pixi-env create -n <name> [package ...]  Create a global pixi environment
+  pixi-env add [-n <name>] <package ...>   Add packages to an environment (or active env)
+  pixi-env remove -n <name>                Delete an environment
+  pixi-env list                            List environments
+  pixi-env path [-n <name>]                Print global env root or environment path
+  pixi-env activate <name>                 Activate an environment (after shell init)
+  pixi-env deactivate                      Deactivate the active environment
+  pixi-env run -n <name> -- <command>      Run a command in an environment
+  pixi-env shell-init                      Print shell integration for bash/zsh
+  pixi-env help                            Show this help
+
+Pixi wrapper after shell-init:
+  pixi env create -n <name> [pkg ...]
+  pixi env list
+  pixi env activate <name>
+  pixi env deactivate
+  pixi env add [-n <name>] <pkg ...>
+  pixi env remove -n <name>
+  pixi env path [-n <name>]
+  pixi env run -n <name> -- <cmd>
+
+
+Environment variables:
+  PIXI_ENV_HOME                            Directory where environments are stored
+                                     (default: ~/.pixi-envs)
+
+Install shell integration by adding this to ~/.bashrc or ~/.zshrc:
+  eval "$(pixi-env shell-init)"
 ```
 
 More commands:
 
 ```sh
+pixi env create -n py311 python==3.11
+pixi env activate py311
 pixi add pandas matplotlib              # adds to active pixi-env env
-pixi env add pandas matplotlib          # same as above
 pixi env add -n py311 pandas matplotlib # explicit env
 pixi env run -n py311 -- python -c 'import numpy; print(numpy.__version__)'
 pixi env path                           # prints the env root directory
