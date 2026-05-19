@@ -59,7 +59,7 @@ Install shell integration by adding this to ~/.bashrc or ~/.zshrc:
   eval "$(pixi-env shell-init)"
 ```
 
-More commands:
+Example use cases:
 
 ```sh
 pixi env create -n py311 python==3.11
